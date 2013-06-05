@@ -33,9 +33,13 @@ class Grocery_list
     end
   end
  
-  def check
-    puts "Here's your grocery list: #{@list}."
-    puts "Here's what you've bought: #{@bought}."
+  def list
+    puts
+    puts "GROCERY LIST"
+    @list.each { |k,v| puts "#{k} (#{v})" }
+    puts
+    puts "BOUGHT"
+    @bought.each { |k,v| puts "#{k} (#{v})" }
     puts
   end
  
@@ -77,7 +81,7 @@ end
 
 # Main loop
 while true
-  puts "What do you want to do?\n add, buy, check, save, exit"
+  puts "What do you want to do?\n add, buy, list, save, exit"
   puts 
   option = gets.chomp
   if option == "add"
@@ -88,8 +92,8 @@ while true
     puts "What did you buy? Please enter an item."
     item = gets.chomp
     list.buy(item)
-  elsif option == "check"
-    list.check
+  elsif option == "list"
+    list.list
   elsif option == "save"
     list.save
   elsif option == "exit"
