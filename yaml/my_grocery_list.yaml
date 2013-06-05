@@ -1,0 +1,7 @@
+--- !ruby/object:Grocery_list
+list:
+  milk: 1
+  eggs: 1
+bought:
+  milk: 1
+username: Brett Sanders
