@@ -70,6 +70,15 @@ class Grocery_list
 
 end
 
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+ # #  # # #  # #   # # #  Program Starts  # #   # # #   # # #  # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+# Initialize from JSON backup or new
+
+
 if File.exist?("my_grocery_list.json")
   list = nil
   File.open("my_grocery_list.json", "r") do |file|
@@ -120,9 +129,9 @@ while true
 
 end
 
+# create json file in current directory before exiting
 json_string = list.to_json
 
-# create yaml file in current directory before exiting
 File.open("my_grocery_list.json", "w") do |file|
   file.puts json_string
 end
