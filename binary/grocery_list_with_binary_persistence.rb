@@ -1,4 +1,4 @@
-# require 'MARSHALL'
+# require 'marshal'
 
 class Grocery_list
   attr_accessor :username
@@ -53,10 +53,10 @@ class Grocery_list
   end
 end
 
-if File.exist?("my_grocery_list.txt")
+if File.exist?("my_grocery_list.bin")
   list = nil
-  File.open("my_grocery_list.txt", "r") do |file|
-    list = MARSHALL::load(file)
+  File.open("my_grocery_list.bin", "r") do |file|
+    list = Marshal.load(file)
     # puts serialized_list
   end
 else
@@ -104,9 +104,9 @@ while true
 
 end
 
-# create MARSHALL file in current directory before exiting
-File.open("my_grocery_list.txt", "w") do |file|
-  file.puts MARSHALL::dump(list)
+# create Marshal file in current directory before exiting
+File.open("my_grocery_list.bin", "w") do |file|
+  file.puts Marshal.dump(list)
 end
 
 

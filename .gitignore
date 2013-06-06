@@ -1,4 +1,6 @@
+# ignore following exported files
 *.json
 *.yaml
 *.yml
+*.bin
 *.txt
